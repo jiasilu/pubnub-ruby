@@ -30,7 +30,7 @@ module Pubnub
       parameters = super
       return parameters if @channel.blank?
       case @action
-      when :add
+      when :add, nil
         parameters.merge!(add: @channel.join(','))
       when :remove
         parameters.merge!(remove: @channel.join(','))
